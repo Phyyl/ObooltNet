@@ -91,6 +91,8 @@ namespace ObooltNet
         }
         public void Stop()
         {
+            CheckClientUsedAsServer();
+            listener.Stop();
             Task.WhenAll(tasks).Wait();
         }
 
